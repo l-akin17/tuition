@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Tuition Centre | Excellence in Education</title>
+
+    <style>
+      /* --- CSS STYLES (The Design) --- */
+      :root {
+          --primary: #2c3e50;
+          --accent: #e74c3c;
+          --light: #f4f4f4;
+          --dark: #333;
+      }
+      body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; line-height: 1.6; color: var(--dark); }
+
+      /* Navigation */
+      header { background: var(--primary); color: #fff; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
+      nav { display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: auto; padding: 0 20px; }
+      .logo { font-size: 1.5rem; font-weight: bold; }
+      nav ul { list-style: none; display: flex; }
+      nav ul li { margin-left: 20px; }
+      nav a { color: #fff; text-decoration: none; font-weight: 500; }
+      nav a:hover { color: var(--accent); }
+
+      /* Hero Section */
+      #home { background: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover; height: 600px; color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; }
+      #home h1 { font-size: 3rem; margin-bottom: 10px; text-shadow: 2px 2px 4px #000; }
+      #home p { font-size: 1.2rem; margin-bottom: 20px; text-shadow: 1px 1px 2px #000; }
+      .btn { display: inline-block; background: var(--accent); color: #fff; padding: 10px 30px; text-decoration: none; border-radius: 5px; transition: 0.3s; }
+      .btn:hover { background: #c0392b; }
+
+      /* Sections */
+      section { padding: 60px 20px; max-width: 1100px; margin: auto; }
+      h2 { text-align: center; color: var(--primary); margin-bottom: 40px; }
+
+      /* About */
+      .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+      .team-member { background: var(--light); padding: 20px; text-align: center; margin-top: 20px; }
+
+      /* Pricing & Subjects */
+      .pricing-table { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+      .card { background: #fff; border: 1px solid #ddd; padding: 20px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+      .price { font-size: 2rem; color: var(--primary); font-weight: bold; }
+
+      /* Results Gallery */
+      .gallery { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 20px; }
+      .gallery img { height: 200px; border-radius: 5px; }
+      .review { font-style: italic; border-left: 4px solid var(--accent); padding-left: 15px; margin-bottom: 20px; }
+
+      /* Video Portal */
+      #portal-content { display: none; }
+      .video-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+      iframe { width: 100%; height: 200px; border: none; }
+
+      /* *** NEW RULE FOR SPACING *** */
+      #portal input[type="password"] {
+          margin-bottom: 15px; 
+      }
+      /* *************************** */
+
+      /* Footer */
+      footer { background: var(--primary); color: #fff; text-align: center; padding: 20px; margin-top: 40px; }
+
+      /* Responsive */
+      @media(max-width: 768px) {
+          .about-grid { grid-template-columns: 1fr; }
+          nav ul { flex-direction: column; display: none; } 
+      }
+
+      /* New Form Styles */
+      .booking-form {
+          max-width: 600px;
+          margin: 40px auto;
+          padding: 20px;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          background: #fff;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      }
+      .booking-form label {
+          display: block;
+          margin-top: 15px;
+          margin-bottom: 5px;
+          font-weight: bold;
+          color: var(--primary);
+      }
+      .booking-form input[type="text"],
+      .booking-form input[type="email"],
+      .booking-form select,
+      .booking-form textarea {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box; 
+      }
+      .booking-form button.btn {
+          width: 100%;
+          margin-top: 20px;
+          cursor: pointer;
+      }
+      /* New Map Styles */
+      .map-section {
+          margin-top: 40px;
+          padding-top: 20px;
+          border-top: 1px solid #eee;
+      }
+      .map-section h3 {
+          text-align: center;
+          color: var(--accent);
+          margin-bottom: 15px;
+      }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Tuition Top Up</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#subjects">Subjects & Pricing</a></li>
+                <li><a href="#portal">Student Portal</a></li>
+                <li><a href="#booking" class="btn" style="margin-top: -10px;">Book Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>Unlock Your Potential</h1>
+        <p>Expert Tuition for KS3, GCSE, and A-Level Students across the UK.</p>
+        <a href="#booking" class="btn">Book Your Lessons Now!</a>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="about-grid">
+            <div>
+                <h3>Our History</h3>
+                <p>Founded in 2015 following the success we had within our families, we wanted to expand it across our community, we have helped countless students attain their academic goals.</p>
+                <h3>Our Approach</h3>
+                <p>We focus on exam technique and confidence building. Our custom curriculum adapts to the student's pace</p>
+            </div>
+            <div>
+                <h3>The Team</h3>
+                <div class="team-member">
+                    <strong>Sarah Jenkins</strong><br>Head of Mathematics<br><em>MSc Cambridge</em>
+                </div>
+                <div class="team-member">
+                    <strong>David Miller</strong><br>Head of English<br><em>BA Oxford</em>
+                </div>
+            </div>
+        </div>
+        
+        <div class="map-section">
+            <h3>Where we are based</h3>
+            <p style="text-align: center;">We meet at: Belvedere Community Centre, London, UK DA17 6AA</p>
+            
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2487.653450949216!2d0.1472097769999865!3d51.48831627255198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a9f032228d4d%3A0xf69c0d3a776e1898!2sBelvedere%20Community%20Centre!5e0!3m2!1sen!2suk!4v1700685600000!5m2!1sen!2suk" 
+                width="100%" 
+                height="400" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+    <section id="results">
+        <h2>Results & Reviews</h2>
+        <div class="review">
+            "My son went from a Grade 4 to a Grade 8 in Maths in just 6 months. The booking system is so easy to use!" <br> - <strong>Jane Doe, Parent</strong>
+        </div>
+        <div class="review">
+            "The recorded lessons allowed me to revise topics I struggled with in class. Highly recommended." <br> - <strong>Tom, A-Level Student</strong>
+        </div>
+        <div style="background: #eee; padding: 20px; text-align: center; border: 2px dashed #ccc;">
+            [Insert Photos of Results/Certificates Here]
+        </div>
+    </section>
+
+    <section id="subjects">
+        <h2>Subjects & Pricing</h2>
+        <div class="pricing-table">
+            <div class="card">
+                <h3>11+ Exam Preparations</h3>
+                <p>English, Mathematics, Verbal Reasoning, Non-Verbal Reasoning</p>
+                <div class="price">£30<span style="font-size: 1rem">/hr</span></div>
+                <p>Weekly entrance exam practice & resources included</p>
+            </div>
+            <div class="card">
+                <h3>KS3 / GCSE Subjects</h3>
+                <p>Maths, English Language, English Literature, Science (Single/Triple), Other</p>
+                <div class="price">£30<span style="font-size: 1rem">/hr</span></div>
+                <p>Targeted exam technique coaching and mock papers</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portal" style="background: #f9f9f9;">
+        <h2>Student Video Portal</h2>
+        <div id="login-form" style="text-align: center; max-width: 400px; margin: auto;">
+            <p>Enter password to access recorded lessons:</p>
+            <input type="password" id="passwordInput" placeholder="Enter Password" style="padding: 10px; width: 70%;">
+            <button onclick="checkPassword()" class="btn" style="border: none; cursor: pointer;">Login</button>
+            <p id="error-msg" style="color: red; display: none;">Incorrect Password</p>
+        </div>
+
+        <div id="portal-content">
+            <p style="text-align: center; margin-bottom: 20px;"><strong>Welcome back! Here are your recorded lessons.</strong></p>
+            <div class="video-container">
+                <div>
+                    <h4>GCSE Algebra Recap</h4>
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                </div>
+                <div>
+                    <h4>A-Level Macbeth Analysis</h4>
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking">
+        <h2>Book a Lesssons</h2>
+        <p style="text-align: center;">Fill out the form below, and we will contact you within 24 hours to confirm your tutor, time, and pricing.</p>
+
+        <form action="https://formsubmit.co/YOUR_EMAIL@EXAMPLE.COM" method="POST" class="booking-form">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="Name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="Email" required>
+
+            <label for="subject">Subject & Level:</label>
+            <select id="subject" name="Subject_Level" required>
+                <option value="">-- Select Subject/Pricing --</option>
+                <option value="11Plus_35">11+ (£35/hr)</option>
+                <option value="KS3GCSE_30">KS3/GCSE Subjects (£30/hr)</option>
+                <option option value="Other">Other (Please specify in notes)</option>
+            </select>
+
+            <label for="time">Preferred Days/Times (e.g., Mon 5 PM or Sat morning):</label>
+            <textarea id="time" name="Preferred_Time" rows="3" required></textarea>
+            
+            <input type="hidden" name="_subject" value="New Tuition Booking Request from Website">
+            <input type="hidden" name="_captcha" value="false">
+            <button type="submit" class="btn">Submit Booking Request</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Tuition Top Up. All Rights Reserved.</p>
+        <p>Belvedere Community Centre, London, UK DA17 6AA | contact@tuitioncompany.co.uk</p>
+    </footer>
+
+    <script>
+        // --- JAVASCRIPT (The Logic) ---
+        function checkPassword() {
+            const password = document.getElementById("passwordInput").value;
+            // Password is 'Tuition2025'
+            if (password === "Tuition2025") {
+                document.getElementById("login-form").style.display = "none";
+                document.getElementById("portal-content").style.display = "block";
+            } else {
+                document.getElementById("error-msg").style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
